@@ -1,3 +1,3 @@
 #!/usr/bin/python3
 float = 3.14163
-print(round(float,2))
+print("{:.2f}\n".format(float))
