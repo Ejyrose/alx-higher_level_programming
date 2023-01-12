@@ -1,3 +1,13 @@
 #!/usr/bin/python3
-def multiply_list_map(my_list=[], number=0):
-    return (list(map((lambda x: x * number), my_list)))
+def best_score(a_dictionary):
+    new_dictionary = {}
+
+    aux = 0
+    if a_dictionary:
+        for key in a_dictionary:
+            if a_dictionary[key] > aux:
+                new_dictionary['name'] = key
+                aux = a_dictionary[key]
+                return new_dictionary['name']
+            else:
+                return None
