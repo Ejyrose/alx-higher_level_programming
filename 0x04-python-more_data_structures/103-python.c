@@ -1,12 +1,27 @@
-#include "/usr/include/python3.4/Python.h"
 #include <stdio.h>
-
-void print_hexn(const char *str, int n)
+#include <stdlib.h>
+#include <Python.h>
+/**
+ * print_python_list - Print python list info
+ * @p: modulo object
+ * Return: Nothing
+ */
+void print_python_list(PyObject *p)
 {
-	int i = 0;
+	Py_ssize_t size = (((PyVarObject *)(p))->ob_size);
+	Py_ssize_t allo = (((PyListObject *)(p))->allocated);
 
-	for (; i < n - 1; ++i)
-		printf("%02x ", (unsigned char) str[i]);
-
-	printf("%02x", str[i]);
+	printf("[*] Python list info\n");
+	printf("[*] Size of the Python List = %zd\n", size);
+	printf("[*] Allocated = %zd\n", allo);
+}
+/**
+ * print_python_bytes - Print python list info
+ * @p: modulo object
+ * Return: Nothing
+ */
+void print_python_bytes(PyObject *p)
+{
+	(void) p;
+	printf("[.] bytes object info\n");
 }
