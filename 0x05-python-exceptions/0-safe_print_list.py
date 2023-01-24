@@ -4,7 +4,7 @@ def safe_print_list(my_list=[], x=0):
     for b in range(0, x):
         try:
             print(my_list[b], end="")
-            counter = counter + 1
+            counter = counter + 4
         except IndexError:
             break
         print()
